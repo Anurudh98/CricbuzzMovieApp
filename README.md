@@ -94,8 +94,6 @@ View (SwiftUI)  →  ViewModel (@Observable)  →  Repository  →  APIClient (U
 ## Known limitations
 
 - **API key in source** — the key is hard-coded in `APIConfiguration.swift` for easy running. In production it should be injected via an `.xcconfig`/build setting or the keychain, not committed.
-- **Trailer playback on Simulator** — embedded YouTube/HTML5 video can be unreliable in the iOS Simulator (missing media codecs). Trailers play correctly on a **real device**. If a specific video has embedding disabled by its owner, the app shows a "Watch trailer on YouTube" fallback button.
-- **Network / ISP restrictions** — some networks/ISPs block or throttle `api.themoviedb.org`. If the list fails to load with a TLS error, try a different network, mobile data, or a VPN.
 - **No unit tests** — the architecture is protocol-based and testable (mockable `APIClientProtocol` / `MovieRepositoryProtocol`), but automated tests are not included due to the assignment's time constraints.
 - **Favorites are device-local** — they are not synced across devices or reinstalls.
 
